@@ -1,9 +1,6 @@
 import 'dart:async';
 import 'dart:math';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:snake/blankpixel.dart';
 import 'package:snake/screens/food_pixel.dart';
 import 'package:snake/snake_pixel.dart';
@@ -33,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   //start game method
   startGame() {
     gamestarted = true;
-    Timer.periodic(Duration(milliseconds: 200), (timer) {
+    Timer.periodic(const Duration(milliseconds: 200), (timer) {
       setState(() {
         if (pausestatus == false) {
           moveSnake();
@@ -46,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    title: Text(
+                    title: const Text(
                       'Game Over!',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -54,10 +51,10 @@ class _HomePageState extends State<HomePage> {
                     content: Column(
                       children: [
                         Text(
-                          'You current score is ' + score.toString(),
-                          style: TextStyle(fontSize: 20),
+                          'You current score is $score',
+                          style: const TextStyle(fontSize: 20),
                         ),
-                        TextField(
+                        const TextField(
                             decoration: InputDecoration(
                           hintText: 'Enter your name',
                         ))
@@ -70,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.pop(context);
                           newGame();
                         },
-                        child: Text('Submit'),
+                        child: const Text('Submit'),
                       ),
                     ],
                   );
@@ -166,7 +163,7 @@ class _HomePageState extends State<HomePage> {
     if (snakePos.last == foodPos) {
       eatFood();
     }
-    //oterhwise remove tail
+    //otherwise remove tail
     else {
       snakePos.removeAt(0);
     }
@@ -189,7 +186,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.grey[800],
         elevation: 8,
-        title: Text('Snake Game',
+        title: const Text('Snake Game',
             style: TextStyle(
               color: Colors.white,
             )),
@@ -202,13 +199,13 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                'Score: ' + score.toString(),
-                style: TextStyle(
+                'Score: $score',
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 21,
                     fontWeight: FontWeight.bold),
               ),
-              Text(
+              const Text(
                 'Highscore: ',
                 style: TextStyle(
                     color: Colors.white,
@@ -250,16 +247,17 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: GridView.builder(
                   itemCount: totalSquares,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: rowSize),
                   itemBuilder: (context, index) {
                     if (snakePos.contains(index)) {
-                      return SnakePixel();
+                      return const SnakePixel();
                     } else if (foodPos == index) {
                       return FoodPixel();
-                    } else
-                      return BlankPixel();
+                    } else {
+                      return const BlankPixel();
+                    }
                   },
                 ),
               )),
@@ -272,9 +270,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               ElevatedButton(
                   onPressed: gamestarted ? () {} : startGame,
-                  child: Text('PLAY')),
-              ElevatedButton(onPressed: pause, child: Text('PAUSE')),
-              ElevatedButton(onPressed: reset, child: Text('RESET'))
+                  child: const Text('PLAY')),
+              ElevatedButton(onPressed: pause, child: const Text('PAUSE')),
+              ElevatedButton(onPressed: reset, child: const Text('RESET'))
             ],
           )))
         ],

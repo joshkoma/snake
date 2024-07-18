@@ -1,0 +1,5 @@
+App required a gradle update. Following the migration process, buildscript is now deprecated and all code under 
+buildscript dependencies is transfered to top level settings.gradle plugins
+-update kotline version in settings.gradle
+-Ensure to USE double quotes "" for build.gradle items not single quotes ''. this caused me a lot of headache in 
+settings.gradle and build.gradle files when entering the id under plugins
