@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 enum Snake_Direction { UP, DOWN, LEFT, RIGHT }
 
 class _HomePageState extends State<HomePage> {
+  //initialize startup
   int rowSize = 10;
   int totalSquares = 100;
   var currentDirection = Snake_Direction.RIGHT;
@@ -89,6 +90,7 @@ class _HomePageState extends State<HomePage> {
       score = 0;
       currentDirection = Snake_Direction.RIGHT;
       gamestarted = false;
+      score = 0;
     });
   }
 

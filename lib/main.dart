@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Snake Africa',
+      title: 'Snake Game from UG',
       theme: ThemeData(),
       home: const HomePage(),
     );
