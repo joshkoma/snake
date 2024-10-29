@@ -1,5 +1,1 @@
-{
-  "database": {
-    "rules": "database.rules.json"
-  }
-}
+{"database":{"rules":"database.rules.json"},"flutter":{"platforms":{"android":{"default":{"projectId":"snakegame-c10d2","appId":"1:860612193839:android:afa8529f94fbcc48fa20da","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"snakegame-c10d2","configurations":{"android":"1:860612193839:android:afa8529f94fbcc48fa20da"}}}}}}

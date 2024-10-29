@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:snake/screens/homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:snake/firebase_options.dart';
 
-Future main() async {
+Future<void> main() async {
   runApp(const MyApp());
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
 
 class MyApp extends StatelessWidget {
