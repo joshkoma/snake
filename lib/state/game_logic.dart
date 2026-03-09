@@ -3,11 +3,6 @@ import 'dart:math';
 /// Enum representing possible snake movement directions.
 enum SnakeDirection { UP, DOWN, LEFT, RIGHT }
 
-/// Encapsulates the core state and rules of the snake game.
-///
-/// The widget layer (`HomePage`) is responsible for rendering and
-/// user interaction; this class merely exposes methods that manipulate
-/// the positions, score, and direction according to game rules.
 class GameLogic {
   /// How many squares per row/column (defaults to 10).
   int rowSize;
